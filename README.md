@@ -30,7 +30,19 @@ ___
 git clone https://github.com/CubeRu/test_tasks.git
 ```
 ___
-### 3. Запускаем
+### 3.Устанавливаем необходимые библиотеки
+
+**_Windows:_**
+```
+pip install -r requirements.txt
+```
+
+**_Linux:_*
+```
+pip install -r requirements.txt
+```
+___
+### 4. Запускаем
 
 **_Windows:_**
 ```
