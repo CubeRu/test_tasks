@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 
 
 class TestYandex:
@@ -11,12 +12,12 @@ class TestYandex:
 	url = 'https://yandex.ru/'
 	
 	def __init__(self):
-		# Инициализируем драйвер и передаем url в качестве параметра
+		# Инициализируем драйвер и передаем url в качестве аргумента
 		self.driver = webdriver.Chrome()
 		self.driver.get(self.url)
 	
 	def search_input_in_yandex(self):
-		# Проверяем, присутствует ли искомый элемент на странице
+		# Проверяем, присутствует ли строка поиска на странице
 		try:
 			search_input = self.driver.find_element_by_xpath(
 				"//input[@class='input__control input__input"
@@ -32,7 +33,7 @@ class TestYandex:
 						           " mini-suggest__popup_theme_flat mini-suggest__popup_visible']")))
 				print('Окно предложений присутствует на странице!')
 				# Отправляем запрос
-				self.driver.find_element_by_xpath("//button[@type='submit']").click()
+				search_input.send_keys(Keys.ENTER)
 			# Если, окно с предложениями поиска не найдено
 			except Exception as e:
 				print(f'''Окно с предложениями не найдено.
@@ -87,5 +88,5 @@ test = TestYandex()
 test.search_input_in_yandex()
 
 # Запускаем вторую задачу в экземпляре класса
-test_2 = TestYandex()
-test_2.search_image_in_yandex()
+# test_2 = TestYandex()
+# test_2.search_image_in_yandex()
