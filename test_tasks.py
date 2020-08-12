@@ -52,6 +52,7 @@ class TestYandex:
 			# Получаем и проверяем ссылку на страницу сервиса "Картинки"
 			try:
 				self.driver.switch_to.window(self.driver.window_handles[1])
+				print(self.driver.current_url)
 				# Если текущая страница соответствует ссылке на сервис "Картинки"
 				if self.driver.current_url == 'https://yandex.ru/images/':
 					# Открываем первое изображение
@@ -64,7 +65,7 @@ class TestYandex:
 					self.driver.find_element_by_xpath(
 						"//div[@class='cl-viewer-navigate__item cl-viewer-navigate__item_right']").click()
 					print('Кнопка следующее изображение нажата')
-					# Находим кликаем по кнопке навигации по картинкам (предыдущая)
+					# Находим и кликаем по кнопке навигации по картинкам (предыдущая)
 					self.driver.find_element_by_xpath(
 						"//div[@class='cl-viewer-navigate__item cl-viewer-navigate__item_left']").click()
 					# Сохраняем ссылку предыдущей картинки в переменную
@@ -88,5 +89,5 @@ test = TestYandex()
 test.search_input_in_yandex()
 
 # Запускаем вторую задачу в экземпляре класса
-# test_2 = TestYandex()
-# test_2.search_image_in_yandex()
+test_2 = TestYandex()
+test_2.search_image_in_yandex()
