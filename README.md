@@ -37,7 +37,7 @@ ___
 pip install -r requirements.txt
 ```
 
-**_Linux:_*
+**_Linux:_**
 ```
 pip install -r requirements.txt
 ```
