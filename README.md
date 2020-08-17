@@ -5,12 +5,12 @@
 
 __Windows:__
 ```
-pip install virtualenv test
+python -m virtualenv
 ```
 
 __Linux:__
 ```
-python3 pip install virtualenv test
+python3 virtualenv
 ```
 
 #### **_Запуск виртуального окружения_**
