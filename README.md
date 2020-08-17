@@ -5,12 +5,12 @@
 
 __Windows:__
 ```
-python -m virtualenv
+python -m virtualenv test
 ```
 
 __Linux:__
 ```
-python3 virtualenv
+python3 virtualenv test
 ```
 
 #### **_Запуск виртуального окружения_**
